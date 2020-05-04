@@ -45,7 +45,14 @@ server.get('/api/users', (req, res) => {
 
 //GET /api/users/:id to return user object with specific id
 server.get('/api/users/:id', (req, res) => {
-
+    const id = req.params.id
+    console.log(id)
+    if(id === undefined){
+        res.status(404).json({errorMessage: "The user with the specifid ID does not exist"})
+    } else if(!users){
+        res.status(500).json({errorMessage: "The users information could not be retrieved"})
+    }else
+    res.status(200).json(users)
 })
 
 //DELETE /api/users/:id to delete user with specific id
