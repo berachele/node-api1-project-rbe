@@ -57,7 +57,15 @@ server.get('/api/users/:id', (req, res) => {
 
 //DELETE /api/users/:id to delete user with specific id
 server.delete('/api/users/:id', (req, res) => {
-
+    const id = req.params.id
+    console.log(id)
+    if(id === undefined){
+        res.status(404).json({errorMessage: "The user with the specifid ID does not exist"})
+    } else if(!users){
+        res.status(500).json({errorMessage: "The users information could not be retrieved"})
+    }else
+    users = users.filter(user => user.id !== id)
+    res.status(200).json(users)
 })
 
 //PATCH /api/users/:id to Update user with specific id--returns updated user
