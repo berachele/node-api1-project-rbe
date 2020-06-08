@@ -1,0 +1,27 @@
+{
+  "name": "node-api1-project-rbe",
+  "version": "1.0.0",
+  "description": "## Topics",
+  "main": "index.js",
+  "scripts": {
+    "server": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/berachele/node-api1-project-rbe.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/berachele/node-api1-project-rbe/issues"
+  },
+  "homepage": "https://github.com/berachele/node-api1-project-rbe#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "uuid": "^8.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
+}
